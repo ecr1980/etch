@@ -1,0 +1,38 @@
+html {background-color:black; color:white}
+
+
+#mainPage{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+#gridHolder{
+
+    display:flex;
+    height:500px;
+    width:500px;
+    border-style:solid;
+    border-color:rgba(54, 53, 53, 0.144);
+    flex-wrap:wrap;
+    
+
+}
+
+.gridBox{
+    background-color:darkgray;
+    border:0.5px;
+    border-style:solid;
+    border-color:black;
+    flex-grow:1;
+}
+
+.gridRow{
+    display:flex;
+    width:500px;
+}
+
+.gridInnerBox{
+    flex-grow:1;
+}
