@@ -2,6 +2,14 @@ const gridSize = 16;
 const gridConstructorArray = [gridSize,gridSize];
 
 const gridInput = document.getElementById('inputGridSize');
+gridInput.oninput = function(){
+    document.getElementById('test').innerHTML = `GRID ${gridInput.value} SIZE`;
+    removeGrid(gridConstructorArray);
+    gridConstructorArray[0] = gridInput.value;
+    gridConstructorArray[1] = gridInput.value; 
+    constructGrid(gridConstructorArray);
+
+}
 
 function blackButtonFunction(){
     document.getElementById('test').style.borderColor = 'white';
@@ -40,6 +48,12 @@ function constructGrid(arraySize){
             const innerGridBox = document.getElementById(`gridRow${i}`);
             const addInnerBox = document.createElement('div');
             addInnerBox.classList.add('gridBox');
+            if (i == 0){
+                addInnerBox.classList.add('topBox');
+            }
+            if (j == 0){
+                addInnerBox.classList.add('leftBox');
+            }
             addInnerBox.id = `innerBox${i}x${j}`;
             innerGridBox.appendChild(addInnerBox);
 
@@ -50,9 +64,9 @@ function constructGrid(arraySize){
 function removeGrid(arraySize){
     for (let i = 0; i< arraySize[0]; i++)
     {
-        for(let j = 0; j< arraySize[0]; j++){
-            document.getElementById(`innerBox${i}x${i}`).outerHTML = "";
-        }
+        //for(let j = 0; j< arraySize[1]; j++){
+        //    document.getElementById(`innerBox${i}x${i}`).remove;
+        //}
         document.getElementById(`gridRow${i}`).outerHTML = "";
     }
 }
