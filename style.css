@@ -33,3 +33,12 @@ html {background-color:black; color:white}
     width:500px;
 }
 
+.testBox{
+    height:50px;
+    width:150px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    border-style: solid;
+}
