@@ -15,14 +15,19 @@
 <div id='mainPage'>
     Come draw with me!
     <div id='buttonsDiv'>
-    <button id='blackButton'>Black</button>
-    <button id='whiteButton'>White</button>
-    <button id='RGB'>RGB</button>
+    <button id='blackButton' onClick='blackButtonFunction()'>Black</button>
+    <button id='whiteButton' onClick='whiteButtonFunction()'>White</button>
+    <button id='RGB' onClick='RGBButtonFunction()'>RGB</button>
     </div>
-    This is placeholder text for the grid size input.
+    <div id='sizeInput'>
+    How large should the grid be?
+    <input type='number' id ='inputGridSize' min='16' max = '100' placeholder = '16' maxlength = '2'>
+    </div>
 <div id='gridHolder'>
+    
       
 </div>
+<div id='test' class = 'testBox'>Test me out!</div>
 </div>
 </body>
 
