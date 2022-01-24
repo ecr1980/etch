@@ -22,7 +22,7 @@ html {background-color:black; color:white}
 
 .gridBox{
     background-color:darkgray;
-    border:0.5px;
+    border-width:0px 1px 1px 0px;
     border-style:solid;
     border-color:black;
     flex-grow:1;
@@ -42,3 +42,13 @@ html {background-color:black; color:white}
     justify-content: center;
     border-style: solid;
 }
+
+.topBox{
+    border-top:1px;
+}
+
+.leftBox{
+    border-left:1px;
+}
+
+
