@@ -13,21 +13,21 @@
 
 <body>
 <div id='mainPage'>
-    Come draw with me!
+    <h1>Come draw with me!</h1>
     <div id='buttonsDiv'>
-    <button id='blackButton' onClick='blackButtonFunction()'>Black</button>
-    <button id='whiteButton' onClick='whiteButtonFunction()'>White</button>
-    <button id='RGB' onClick='RGBButtonFunction()'>RGB</button>
+    <button class = 'button' id='blackButton' onClick='blackButtonFunction()'>Black</button>
+    <button class = 'button' id='whiteButton' onClick='whiteButtonFunction()'>White</button>
+    <button class = 'button' id='RGBButton' onClick='RGBButtonFunction()'>RGB</button>
     </div>
+    <div id='selectionDisplay' class = 'selectionDisplayBox'>GRID SIZE 16</div>
     <div id='sizeInput'>
-    How large should the grid be?
     <input type='range' id ='inputGridSize' min='16' max = '100' value = '16' placeholder="16">
     </div>
 <div id='gridHolder'>
     
       
 </div>
-<div id='test' class = 'testBox'>GRID SIZE 16</div>
+
 </div>
 </body>
 
