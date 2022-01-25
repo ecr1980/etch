@@ -3,7 +3,7 @@ const gridConstructorArray = [gridSize,gridSize];
 
 const gridInput = document.getElementById('inputGridSize');
 gridInput.oninput = function(){
-    document.getElementById('test').innerHTML = `GRID ${gridInput.value} SIZE`;
+    document.getElementById('test').innerHTML = `GRID SIZE ${gridInput.value} `;
     removeGrid(gridConstructorArray);
     gridConstructorArray[0] = gridInput.value;
     gridConstructorArray[1] = gridInput.value; 
@@ -11,18 +11,31 @@ gridInput.oninput = function(){
 
 }
 
+let blackSelect = true;
+let whiteSelect = false;
+let RGBSelect = false;
+
 function blackButtonFunction(){
+    whiteSelect = false;
+    RGBSelect = false;
+    blackSelect = true;
     document.getElementById('test').style.borderColor = 'white';
     document.getElementById('test').style.backgroundColor = 'black';
     document.getElementById('test').style.color = 'white';
 }
 
 function whiteButtonFunction(){
+    whiteSelect = true;
+    RGBSelect = false;
+    blackSelect = false;
     document.getElementById('test').style.borderColor = 'black';
     document.getElementById('test').style.backgroundColor = 'white';
     document.getElementById('test').style.color = 'black';
 }
 function RGBButtonFunction(){
+    whiteSelect = false;
+    RGBSelect = true;
+    blackSelect = false;
     document.getElementById('test').style.borderColor = '#FF8AFF';
     document.getElementById('test').style.backgroundColor = '#7FFFD4';
     document.getElementById('test').style.color = '#FF8AFF';
@@ -48,6 +61,7 @@ function constructGrid(arraySize){
             const innerGridBox = document.getElementById(`gridRow${i}`);
             const addInnerBox = document.createElement('div');
             addInnerBox.classList.add('gridBox');
+            addInnerBox.classList.add('gridBoxBackGround');
             if (i == 0){
                 addInnerBox.classList.add('topBox');
             }
@@ -56,6 +70,31 @@ function constructGrid(arraySize){
             }
             addInnerBox.id = `innerBox${i}x${j}`;
             innerGridBox.appendChild(addInnerBox);
+            let chooseColor = document.getElementById(`innerBox${i}x${j}`);
+            chooseColor.addEventListener('mouseenter', function(event) {
+                if (whiteSelect == true) {
+                    event.target.style.backgroundColor = 'white';
+                }
+                else if (blackSelect == true) {
+                    event.target.style.backgroundColor = 'black';
+                }
+                else if (RGBSelect == true) {
+                    let RGBPicker = Math.floor(Math.random()*4);
+                    if (RGBPicker == 0) {
+                        event.target.style.backgroundColor = '#FF8AFF'
+                    }
+                    else if (RGBPicker == 1) {
+                        event.target.style.backgroundColor = '#7FFFD4'
+                    }
+                    else if (RGBPicker == 2) {
+                        event.target.style.backgroundColor = '#FFFF33'
+                    }
+                    else {
+                        event.target.style.backgroundColor = '#66FF66'
+                    }
+                }
+            }, false); 
+            
 
         }
     }
