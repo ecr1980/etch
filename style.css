@@ -20,6 +20,30 @@ html {background-color:black; color:white}
 
 }
 
+.button{
+    padding:20px;
+    border-style:solid;
+    border-radius:20px;
+}
+
+#blackButton{
+    background-color:black;
+    color:white;
+    border-color:white;
+}
+
+#whiteButton{
+    background-color:white;
+    color:black;
+    border-color:black;
+}
+
+#RGBButton{
+    background-color: #7FFFD4;
+    color: #FF8AFF;
+    border-color:#FF8AFF;
+}
+
 .gridBox{
     background-color:darkgray;
     border-width:0px 1px 1px 0px;
@@ -33,7 +57,7 @@ html {background-color:black; color:white}
     width:500px;
 }
 
-.testBox{
+.selectionDisplayBox{
     height:50px;
     width:150px;
     border-radius:20px;
@@ -41,6 +65,11 @@ html {background-color:black; color:white}
     align-items:center;
     justify-content: center;
     border-style: solid;
+    margin-top:30px;
+}
+
+#inputGridSize {
+    margin-bottom:30px;
 }
 
 .topBox{
