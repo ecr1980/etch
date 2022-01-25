@@ -3,7 +3,7 @@ const gridConstructorArray = [gridSize,gridSize];
 
 const gridInput = document.getElementById('inputGridSize');
 gridInput.oninput = function(){
-    document.getElementById('test').innerHTML = `GRID SIZE ${gridInput.value} `;
+    document.getElementById('selectionDisplay').innerHTML = `GRID SIZE ${gridInput.value} `;
     removeGrid(gridConstructorArray);
     gridConstructorArray[0] = gridInput.value;
     gridConstructorArray[1] = gridInput.value; 
@@ -19,26 +19,26 @@ function blackButtonFunction(){
     whiteSelect = false;
     RGBSelect = false;
     blackSelect = true;
-    document.getElementById('test').style.borderColor = 'white';
-    document.getElementById('test').style.backgroundColor = 'black';
-    document.getElementById('test').style.color = 'white';
+    document.getElementById('selectionDisplay').style.borderColor = 'white';
+    document.getElementById('selectionDisplay').style.backgroundColor = 'black';
+    document.getElementById('selectionDisplay').style.color = 'white';
 }
 
 function whiteButtonFunction(){
     whiteSelect = true;
     RGBSelect = false;
     blackSelect = false;
-    document.getElementById('test').style.borderColor = 'black';
-    document.getElementById('test').style.backgroundColor = 'white';
-    document.getElementById('test').style.color = 'black';
+    document.getElementById('selectionDisplay').style.borderColor = 'black';
+    document.getElementById('selectionDisplay').style.backgroundColor = 'white';
+    document.getElementById('selectionDisplay').style.color = 'black';
 }
 function RGBButtonFunction(){
     whiteSelect = false;
     RGBSelect = true;
     blackSelect = false;
-    document.getElementById('test').style.borderColor = '#FF8AFF';
-    document.getElementById('test').style.backgroundColor = '#7FFFD4';
-    document.getElementById('test').style.color = '#FF8AFF';
+    document.getElementById('selectionDisplay').style.borderColor = '#FF8AFF';
+    document.getElementById('selectionDisplay').style.backgroundColor = '#7FFFD4';
+    document.getElementById('selectionDisplay').style.color = '#FF8AFF';
 }
 
 gridInput.addEventListener('input', function(){
@@ -67,7 +67,7 @@ function constructGrid(arraySize){
             }
             if (j == 0){
                 addInnerBox.classList.add('leftBox');
-            }
+            } 
             addInnerBox.id = `innerBox${i}x${j}`;
             innerGridBox.appendChild(addInnerBox);
             let chooseColor = document.getElementById(`innerBox${i}x${j}`);
@@ -77,6 +77,7 @@ function constructGrid(arraySize){
                 }
                 else if (blackSelect == true) {
                     event.target.style.backgroundColor = 'black';
+                    
                 }
                 else if (RGBSelect == true) {
                     let RGBPicker = Math.floor(Math.random()*4);
@@ -103,9 +104,6 @@ function constructGrid(arraySize){
 function removeGrid(arraySize){
     for (let i = 0; i< arraySize[0]; i++)
     {
-        //for(let j = 0; j< arraySize[1]; j++){
-        //    document.getElementById(`innerBox${i}x${i}`).remove;
-        //}
         document.getElementById(`gridRow${i}`).outerHTML = "";
     }
 }
